@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="myserver_api"
+  id="myeclipse.1450422007527"
+  context-root="/myserver_xapi"
+  j2ee-spec="1.7"
+  archive="myserver_api.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

@@ -19,14 +19,15 @@ public class UserRequest implements BaseRequest {
 	}
 
 	public UserRequest(String uid) {
+	    this.uid = uid;
 	}
 
 	public String buildPath() {
-		return null;
+		return RET_URL;
 	}
 
 	public String Sign() {
-		return null;
+		return RET_URL + "?uid=" + uid;
 	}
 
 }

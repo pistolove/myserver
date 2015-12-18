@@ -1,24 +1,22 @@
 package com.lib.transport;
 
-import javax.annotation.Resource;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.web.client.AsyncRestTemplate;
 import org.springframework.web.client.RestTemplate;
 
 import com.lib.transport.user.request.UserRequest;
 
+@Component
 public class HttpClientTemplate {
 	private static final Logger log = LoggerFactory.getLogger(HttpClientTemplate.class);
 	
-	@Resource
-	private RestTemplate reTemplate;
+	private RestTemplate reTemplate = new RestTemplate();
 	
-	@Resource
-	private AsyncRestTemplate asyncRestTemplate;
+	private AsyncRestTemplate asyncRestTemplate = new AsyncRestTemplate();
 	
 	public <T> T getForObject(UserRequest request, Class<T> responseType) throws Exception {
 		long st = System.currentTimeMillis();

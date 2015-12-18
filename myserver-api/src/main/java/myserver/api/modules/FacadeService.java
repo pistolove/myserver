@@ -13,9 +13,6 @@ public class FacadeService {
 	@Resource
 	protected UserService userService;
 
-	@Resource
-	protected CommentService commentService;
-
 	public UserService getUserService() {
 		return userService;
 	}
@@ -24,12 +21,5 @@ public class FacadeService {
 		this.userService = userService;
 	}
 
-	public CommentService getCommentService() {
-		return commentService;
-	}
-
-	public void setCommentService(CommentService commentService) {
-		this.commentService = commentService;
-	}
 
 }

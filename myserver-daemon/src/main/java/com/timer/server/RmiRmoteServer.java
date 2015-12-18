@@ -6,7 +6,6 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 import com.lib.server.rmi.RmiInterface;
-import com.lib.server.rmi.RmiServer;
 
 
 public class RmiRmoteServer {

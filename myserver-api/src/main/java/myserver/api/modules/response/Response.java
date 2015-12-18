@@ -14,12 +14,10 @@ public class Response<T> implements BaseResponse {
 		this.data = data;
 	}
 
-	@Override
 	public String getErrorcode() {
 		return errorCode;
 	}
 
-	@Override
 	public String getErrorMessage() {
 		return errorMessage;
 	}

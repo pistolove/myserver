@@ -1,4 +1,4 @@
-package com.lib.server.rmi;
+package com.timer.server;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.lib.server.CacheTemplate;
+import com.lib.server.rmi.RmiInterface;
 
 @Service
 public class RmiServer extends UnicastRemoteObject implements RmiInterface {

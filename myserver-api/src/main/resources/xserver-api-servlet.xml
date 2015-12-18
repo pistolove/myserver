@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
+        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+
+	<!-- The below registers a RequestMappingHandlerMapping, a RequestMappingHandlerAdapter, 
+		and an ExceptionHandlerExceptionResolver (among others) in support of processing 
+		requests with annotated controller methods using annotations such as @RequestMapping 
+		, @ExceptionHandler, and others. -->
+	<mvc:annotation-driven />
+
+	<!-- 扫描Component -->
+	<context:component-scan base-package="myserver.api.modules" />
+
+	<!-- 数据视图 -->
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="defaultViews">
+			<list>
+				<bean class="com.lib.custom.CustomMappingJacksonJsonView">
+					<property name="disableCaching" value="false" />
+					<property name="objectMapper">
+						<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+							<property name="serializationInclusion">
+								<value
+									type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+							</property>
+						</bean>
+					</property>
+				</bean>
+				<bean class="com.lib.custom.CustomMappingJacksonJsonpView">
+					<property name="disableCaching" value="false" />
+					<property name="objectMapper">
+						<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+							<property name="serializationInclusion">
+								<value
+									type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+							</property>
+						</bean>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="order">
+			<value>1</value>
+		</property>
+	</bean>
+
+	<!-- 页面视图 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order">
+			<value>2</value>
+		</property>
+	</bean>
+</beans>

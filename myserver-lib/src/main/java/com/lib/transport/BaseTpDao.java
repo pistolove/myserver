@@ -7,7 +7,6 @@ import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.springframework.stereotype.Component;
-
 import com.lib.server.CacheTemplate;
 
 @Component

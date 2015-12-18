@@ -32,7 +32,6 @@ public class JobAdapter implements Job {
 		this.methodName = methodName;
 	}
 
-	@Override
 	public void execute(JobExecutionContext context)
 			throws JobExecutionException {
 		try {

@@ -1,15 +1,19 @@
 package myserver.api.modules.user;
 
+import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Service;
+
+import com.lib.transport.user.request.UserRequest;
+import com.lib.transport.user.response.UserResponse;
+
 import myserver.api.modules.BaseService;
 import myserver.api.modules.dto.BaseDto;
 import myserver.api.modules.dto.SingleDto;
 import myserver.api.modules.response.Response;
 import myserver.api.modules.user.dto.UserDto;
 import myserver.api.util.MessageUtils;
-import org.apache.commons.lang.StringUtils;
-import com.lib.transport.user.request.UserRequest;
-import com.lib.transport.user.response.UserResponse;
 
+@Service(value = "userService")
 public class UserService extends BaseService{
 
 	public Response<BaseDto> getUserInfo(String uid) {

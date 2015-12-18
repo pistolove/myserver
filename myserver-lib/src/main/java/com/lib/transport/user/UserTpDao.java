@@ -2,11 +2,13 @@ package com.lib.transport.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.lib.transport.BaseTpDao;
 import com.lib.transport.user.request.UserRequest;
 import com.lib.transport.user.response.UserResponse;
 
+@Component("UserTpDao")
 public class UserTpDao extends BaseTpDao{
 	private static final Logger log = LoggerFactory.getLogger(UserTpDao.class);
 	

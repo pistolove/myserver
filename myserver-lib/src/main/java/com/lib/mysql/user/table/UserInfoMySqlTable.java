@@ -14,7 +14,7 @@ public class UserInfoMySqlTable implements Serializable {
 
     private String email;
 
-    private String userId;
+    private String id;
 
     public String getUserName() {
         return userName;
@@ -57,11 +57,11 @@ public class UserInfoMySqlTable implements Serializable {
     }
 
     public String getUserId() {
-        return userId;
+        return id;
     }
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        this.id = userId;
     }
 
 }

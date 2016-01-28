@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.lib.server.CacheTemplate;
+import com.lib.server.memcache.MemcacheTemplate;
 import com.lib.server.rmi.RmiInterface;
 
 @Service
@@ -19,7 +20,11 @@ public class RmiServer extends UnicastRemoteObject implements RmiInterface {
 	private static final Logger log = LoggerFactory.getLogger(RmiServer.class);
 	
 	@Resource
-	private CacheTemplate memcached;;
+	private static CacheTemplate memcached;
+	
+	static {
+	    memcached = new MemcacheTemplate();
+	}
 
 	public CacheTemplate getMemcached() {
 		return memcached;
@@ -45,18 +50,18 @@ public class RmiServer extends UnicastRemoteObject implements RmiInterface {
 		return memcached.set(key, obj);
 	}
 
-	public int update(String key, Object value, int ... time) {
-		int result = 0;
-		if(time != null && time.length > 0) {
-			result = memcached.set(key, value, time[0]);
-		} else {
-			result = memcached.set(key, value);
-		}
-		if(result == 1) {
-			log.error("update error");
-		}
-		
-		return result;
-	}
+//	public int update(String key, Object value, int ... time) {
+//		int result = 0;
+//		if(time != null && time.length > 0) {
+//			result = memcached.set(key, value, time[0]);
+//		} else {
+//			result = memcached.set(key, value);
+//		}
+//		if(result == 1) {
+//			log.error("update error");
+//		}
+//		
+//		return result;
+//	}
 
 }

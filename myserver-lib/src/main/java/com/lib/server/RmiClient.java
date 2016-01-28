@@ -29,9 +29,7 @@ public class RmiClient {
 	}
 	
 	private static String[] servers = new String[] {
-		"192.168.134.128;1099",
-		"192.168.134.129;1099",
-		"192.168.134.130;1099",
+		"127.0.0.1;1099"
 	};
 	
 	static {
@@ -41,49 +39,50 @@ public class RmiClient {
 		}
 	}
 	
-	public void update(String key, Object value, int ... time){
-		for (String ip : SERVERS.keySet()) {
-			Integer port = SERVERS.get(ip);
-			int result = 0;
-			try {
-				result = update(ip, port, key, value, time);
-			} catch (Exception e) {
-				result = 1;
-			}
-			
-			if(result==1){
-				log.error("update error");
-			}
-		}
-	}
+//	public void update(String key, Object value, int ... time){
+//		for (String ip : SERVERS.keySet()) {
+//			Integer port = SERVERS.get(ip);
+//			int result = 0;
+//			try {
+//				result = update(ip, port, key, value, time);
+//			} catch (Exception e) {
+//				result = 1;
+//			}
+//			
+//			if(result==1){
+//				log.error("update error");
+//			}
+//		}
+//	}
 	
-	private int update(String ip, Integer port, String key, Object value, int[] time) throws RemoteException {
-		int status = 0;
-		int t = 0;
-		if(time != null && time.length > 0) {
-			t = time[0];
-		}
-		
-		Registry registry = LocateRegistry.getRegistry(ip, port);
-		try {
-			RmiInterface rmiService = (RmiInterface) registry.lookup(RmiConstant.REGISTER_SERVER_NAME);
-			status = rmiService.update(key, value, t);
-		} catch (NotBoundException e) {
-			log.error("update error");
-			e.printStackTrace();
-		}
-		return status;
-	}
+//	private int update(String ip, Integer port, String key, Object value, int[] time) throws RemoteException {
+//		int status = 0;
+//		int t = 0;
+//		if(time != null && time.length > 0) {
+//			t = time[0];
+//		}
+//		
+//		Registry registry = LocateRegistry.getRegistry(ip, port);
+//		try {
+//			RmiInterface rmiService = (RmiInterface) registry.lookup(RmiConstant.REGISTER_SERVER_NAME);
+//			status = rmiService.update(key, value, t);
+//		} catch (NotBoundException e) {
+//			log.error("update error");
+//			e.printStackTrace();
+//		}
+//		return status;
+//	}
 
 	public static void main(String[] args) throws NamingException,
 			MalformedURLException {
 		try {
-			Registry registry = LocateRegistry.getRegistry("192.168.134.128", 1099);
+			Registry registry = LocateRegistry.getRegistry("127.0.0.1", 1099);
 			RmiInterface rmiService = (RmiInterface) registry.lookup("RMI");
 
 			int set1 = rmiService.set("Monday", "today is monday");
 
 			System.err.println(set1);
+			System.err.println(rmiService.get("Monday"));
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		} catch (NotBoundException e) {

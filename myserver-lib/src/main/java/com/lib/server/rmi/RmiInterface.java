@@ -11,5 +11,5 @@ public interface RmiInterface extends Remote {
 
 	public int set(String key, Object obj) throws RemoteException;
 
-	public int update(String key, Object value, int ... time);
+//	public int update(String key, Object value, int ... time);
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.lib.mysql.user.UserMysqlDao">
-<select id="getUseInfoById" parameterType="com.lib.mysql.user.table.UserInfoMySqlTable">
-	SELECT * FROM MOBILE_USERI_INFO WHERE id = #{id}
+<mapper namespace="com.lib.mysql.book.BookMySqlDao">
+<select id="getBookById" parameterType="com.lib.mysql.book.table.BookMySqlTable">
+	SELECT * FROM MOBILE_BOOK_INFO WHERE bid = #{id}
 </select>
 
 <delete id="">

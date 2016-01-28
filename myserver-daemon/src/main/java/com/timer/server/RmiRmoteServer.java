@@ -11,7 +11,7 @@ import com.lib.server.rmi.RmiInterface;
 public class RmiRmoteServer {
 	public static void main(String[] args) throws MalformedURLException {
 		try {
-			System.setProperty("java.rmi.server.hostname", "192.168.134.128");
+//			System.setProperty("java.rmi.server.hostname", "127.0.0.1");
 			Registry registry = LocateRegistry.createRegistry(1099);
 			
 			RmiInterface server = new RmiServer();

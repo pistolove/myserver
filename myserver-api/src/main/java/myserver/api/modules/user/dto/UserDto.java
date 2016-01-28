@@ -5,17 +5,25 @@ import myserver.api.modules.dto.BaseDto;
 public class UserDto extends BaseDto {
 	private static final long serialVersionUID = -2177925934515034120L;
 
-	private String uid;
+	private String uid;//用户id
 
-	private String uname;
+	private String uname;//用户名称
 
-	private Long phoneNumber;
+	private Long phoneNumber;//手机号
 
-	private String uinfo;
+	private String uinfo;//用户说明
 
-	private String email;
-	private String secrect;
+	private String email;//邮箱
+	
+	private String secrect;//密码
 
+	/**
+	 * 测试测试
+	 */
+	public static void getName() {
+		
+	}
+	
 	public String getUid() {
 		return uid;
 	}
@@ -62,5 +70,14 @@ public class UserDto extends BaseDto {
 
 	public void setSecrect(String secrect) {
 		this.secrect = secrect;
+	}
+	
+	
+	public static class Child {
+		private Integer age1;
+		
+		private String name1;
+		
+		private String email1;
 	}
 }

@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
+import com.lib.mysql.FacadeMySqlDao;
 import com.lib.server.CacheTemplate;
 import com.lib.server.RmiClient;
 import com.lib.transport.BaseTpDao;
@@ -22,6 +23,9 @@ public class BaseService {
 	@Resource
 	protected FacadeTpDao facadeTpDao;
 
+	@Resource
+	protected FacadeMySqlDao facadeMySqlDao;
+	
 	@Resource
 	protected HttpClientTemplate httpClientTemplate;
 
@@ -78,4 +82,13 @@ public class BaseService {
 		this.rmiClient = rmiClient;
 	}
 
+	public FacadeMySqlDao getfacadeMySqlDao() {
+		return facadeMySqlDao;
+	}
+
+	public void setfacadeMySqlDao(FacadeMySqlDao mySqlDao) {
+		this.facadeMySqlDao = mySqlDao;
+	}
+
+	
 }

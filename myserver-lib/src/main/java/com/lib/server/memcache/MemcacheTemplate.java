@@ -44,7 +44,7 @@ public class MemcacheTemplate extends CacheTemplate {
 
 	}
 
-	public String get(String key) {
+	public Object get(String key) {
 		if (key != null) {
 			try {
 				return client.get(key);

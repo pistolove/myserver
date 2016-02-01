@@ -1,10 +1,10 @@
-package com.lib.mysql.book.table;
+package com.lib.mysql.book;
 
 import java.math.BigDecimal;
 
 public class BookMySqlTable {
 
-    private Long bid;
+    private int bid;
 
     private String bname;
 
@@ -20,11 +20,11 @@ public class BookMySqlTable {
 
     private Integer pages;
 
-    public Long getBid() {
+    public int getBid() {
         return bid;
     }
 
-    public void setBid(Long bid) {
+    public void setBid(int bid) {
         this.bid = bid;
     }
 

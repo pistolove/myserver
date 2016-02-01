@@ -2,16 +2,15 @@ package myserver.api.modules;
 
 import javax.annotation.Resource;
 
-import myserver.api.modules.book.BookService;
-import myserver.api.modules.comment.CommentService;
-import myserver.api.modules.user.UserService;
-
 import org.springframework.stereotype.Component;
+
+import myserver.api.modules.book.BookService;
+import myserver.api.modules.user.UserService;
 
 @Component
 public class FacadeService {
 
-	@Resource
+	@Resource(name="userService")
 	protected UserService userService;
 
 	public UserService getUserService() {
@@ -22,7 +21,7 @@ public class FacadeService {
 		this.userService = userService;
 	}
 
-	@Resource
+	@Resource(name="bookService")
 	protected BookService bookService;
 
 	public BookService getBookService() {

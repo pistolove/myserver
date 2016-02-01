@@ -38,7 +38,7 @@ public class RmiServer extends UnicastRemoteObject implements RmiInterface {
 		super();
 	}
 
-	public String get(String key) {
+	public Object get(String key) {
 		return memcached.get(key);
 	}
 

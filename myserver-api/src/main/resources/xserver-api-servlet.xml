@@ -23,6 +23,7 @@
 
 	<!-- 扫描Component -->
 	<context:component-scan base-package="myserver.api.modules" />
+	<context:component-scan base-package="myserver.api" />
 
 	<!-- 数据视图 -->
 	<bean

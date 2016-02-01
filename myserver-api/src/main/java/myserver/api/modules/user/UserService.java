@@ -5,7 +5,7 @@ import java.util.Set;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
-import com.lib.mysql.user.table.UserInfoMySqlTable;
+import com.lib.mysql.user.UserInfoMySqlTable;
 
 import myserver.api.modules.BaseService;
 import myserver.api.modules.dto.BaseDto;

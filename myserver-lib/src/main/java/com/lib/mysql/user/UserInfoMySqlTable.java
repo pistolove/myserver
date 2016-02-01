@@ -1,10 +1,12 @@
-package com.lib.mysql.user.table;
+package com.lib.mysql.user;
 
 import java.io.Serializable;
 
 public class UserInfoMySqlTable implements Serializable {
 
-    private String userName;
+    private static final long serialVersionUID = 8994947731194398118L;
+
+    private String username;
 
     private String password;
 
@@ -17,11 +19,11 @@ public class UserInfoMySqlTable implements Serializable {
     private String id;
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.username = userName;
     }
 
     public String getPassword() {

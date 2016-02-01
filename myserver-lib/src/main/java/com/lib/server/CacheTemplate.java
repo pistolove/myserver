@@ -2,7 +2,7 @@ package com.lib.server;
 
 public abstract class CacheTemplate {
 	
-	public abstract String get(String key);
+	public abstract Object get(String key);
 
 	public abstract void delete(String key);
 

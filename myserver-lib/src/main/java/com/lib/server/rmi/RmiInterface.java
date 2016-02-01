@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 
 public interface RmiInterface extends Remote {
 
-	public String get(String key) throws RemoteException;
+	public Object get(String key) throws RemoteException;
 
 	public void delete(String key) throws RemoteException;
 

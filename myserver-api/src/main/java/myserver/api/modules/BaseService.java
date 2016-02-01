@@ -2,8 +2,6 @@ package myserver.api.modules;
 
 import javax.annotation.Resource;
 
-import org.springframework.stereotype.Component;
-
 import com.lib.mysql.FacadeMySqlDao;
 import com.lib.server.CacheTemplate;
 import com.lib.server.RmiClient;
@@ -11,7 +9,7 @@ import com.lib.transport.BaseTpDao;
 import com.lib.transport.FacadeTpDao;
 import com.lib.transport.HttpClientTemplate;
 
-@Component
+
 public class BaseService {
 
 	@Resource

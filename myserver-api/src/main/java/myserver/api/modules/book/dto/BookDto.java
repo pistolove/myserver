@@ -1,10 +1,11 @@
 package myserver.api.modules.book.dto;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class BookDto {
+public class BookDto implements Serializable{
 
-	private Long bid;
+	private Integer bid;
 	
 	private String bname;
 	
@@ -20,11 +21,11 @@ public class BookDto {
 	
 	private Integer pages;
 
-	public Long getBid() {
+	public Integer getBid() {
 		return bid;
 	}
 
-	public void setBid(Long bid) {
+	public void setBid(Integer bid) {
 		this.bid = bid;
 	}
 

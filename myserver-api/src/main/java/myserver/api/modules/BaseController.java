@@ -1,8 +1,9 @@
 package myserver.api.modules;
 
-import org.springframework.stereotype.Component;
+import javax.annotation.Resource;
 
-@Component
 public class BaseController {
+	
+	@Resource
 	protected FacadeService facadeService;
 }

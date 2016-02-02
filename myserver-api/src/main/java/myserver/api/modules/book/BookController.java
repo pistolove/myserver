@@ -12,7 +12,7 @@ import myserver.api.modules.response.Response;
 public class BookController extends BaseController{
 
 	@RequestMapping("/book/get/id")
-	public Response<BookDto> getBookById(@RequestParam(value="id") String id){
+	public Response<BookDto> getBookById(@RequestParam(value="id") String id) throws Exception{
 		return this.facadeService.getBookService().getBookById(id);
 	}
 }

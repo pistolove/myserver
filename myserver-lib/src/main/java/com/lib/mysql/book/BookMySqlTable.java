@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class BookMySqlTable {
 
-    private int bid;
+    private Integer bid;
 
     private String bname;
 
@@ -20,11 +20,11 @@ public class BookMySqlTable {
 
     private Integer pages;
 
-    public int getBid() {
+    public Integer getBid() {
         return bid;
     }
 
-    public void setBid(int bid) {
+    public void setBid(Integer bid) {
         this.bid = bid;
     }
 

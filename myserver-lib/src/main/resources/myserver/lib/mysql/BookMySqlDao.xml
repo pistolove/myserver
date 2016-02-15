@@ -2,8 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lib.mysql.BookMySqlDao">
-	<select id="getBookById" resultType="com.lib.mysql.book.BookMySqlTable">
+	<select id ="getBookById" resultType ="com.lib.mysql.book.BookMySqlTable">
 		select * from mobile_book_info where bid = #{id}
 	</select>
-
+	
+	<delete id ="deleteBookById">
+	   delete from mobile_book_info where bid = #{id}
+	</delete>
+	
+	<update id = "updateBookById" parameterType="com.lib.mysql.book.BookMySqlTable"> 
+	   update mobile_book_info set bname = #{bookTable.bname}, category=#{bookTable.category},
+	   description = #{bookTable.description}, price = #{bookTable.price}, publication=#{bookTable.publication},
+	   pages = #{bookTable.pages}, pubtime= #{bookTable.pubtime} where bid = #{bookTable.bid}
+	</update>
+	
 </mapper>

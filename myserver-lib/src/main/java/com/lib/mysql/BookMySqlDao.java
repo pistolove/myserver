@@ -10,4 +10,7 @@ public interface BookMySqlDao {
 
     public BookMySqlTable getBookById(@Param("id") String id);
 
+    public Integer deleteBookById(@Param("id") String id);
+
+    public Integer updateBookById(@Param("bookTable") BookMySqlTable bookDto);
 }

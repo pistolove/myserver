@@ -8,7 +8,7 @@ import java.rmi.registry.Registry;
 import com.lib.server.rmi.RmiInterface;
 
 
-public class RmiRmoteServer {
+public class RmiRemoteServer {
 	public static void main(String[] args) throws MalformedURLException {
 		try {
 //			System.setProperty("java.rmi.server.hostname", "127.0.0.1");

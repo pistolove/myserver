@@ -32,7 +32,7 @@ public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
     
 	public static void main(String[] args) throws FileNotFoundException {
-		String confDir = System.getProperty("user.dir") + "\\src\\main\\resources\\conf\\";
+		String confDir = System.getProperty("user.dir") + "/src/main/resources/conf/";
 		String die = System.getProperty("conf.dir");
 		PropertyConfigurator.configure(new FileInputStream(die
 				+ "/log4j.properties"));
@@ -69,7 +69,7 @@ public class Main {
 				/*
 				 * 加载定时任务
 				 */
-				ApplicationContext applicationContext = new ClassPathXmlApplicationContext("file:d:/time-quartz.xml");
+				ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/Users/liqqc/Desktop/time-quartz.xml");
 
 				/*
 				 * 启动定时器
@@ -133,7 +133,7 @@ public class Main {
 		String osName = System.getProperty("os.name");
 		if (osName.equalsIgnoreCase("Linux")) {
 		} else {
-			System.setProperty("conf.dir", "D:\\conf");
+			System.setProperty("conf.dir", "/Users/liqqc/conf");
 		}
 	}
 

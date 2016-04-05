@@ -69,7 +69,7 @@ public class Main {
 				/*
 				 * 加载定时任务
 				 */
-				ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/Users/liqqc/Desktop/time-quartz.xml");
+				ApplicationContext applicationContext = new ClassPathXmlApplicationContext(new String[] {"file:/Users/liqqc/Desktop/time-quartz.xml"});
 
 				/*
 				 * 启动定时器
@@ -87,7 +87,7 @@ public class Main {
 					String methodName = arr[1];
 					String cron = arr[2];
 
-					JobDataMap jobDataMap = new JobDataMap();
+   					JobDataMap jobDataMap = new JobDataMap();
 					jobDataMap.put("object",
 							applicationContext.getBean(beanName));
 					jobDataMap.put("methodName", methodName);
@@ -106,6 +106,7 @@ public class Main {
 				}
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);
+				e.printStackTrace();
 			}
 		} else {
 		}
@@ -132,8 +133,10 @@ public class Main {
 	public static void setJvmParams() {
 		String osName = System.getProperty("os.name");
 		if (osName.equalsIgnoreCase("Linux")) {
+	          System.setProperty("conf.dir", "/Users/liqqc/conf");
 		} else {
 			System.setProperty("conf.dir", "/Users/liqqc/conf");
+			System.setProperty("tomcat.log","/Users/liqqc/conf/logs");
 		}
 	}
 

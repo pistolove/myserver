@@ -8,8 +8,8 @@
 	</settings>
 
 
-	<mappers>
+<!-- 	<mappers>
 		<mapper resource="classpath:myserver/lib/mysql/userMysqlDao.xml" />
 		<mapper resource="src/main/resources/myserver/lib/mysql/BookMysqlDao.xml" />
-	</mappers>
+	</mappers> -->
 </configuration>

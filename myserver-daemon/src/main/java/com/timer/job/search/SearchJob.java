@@ -17,7 +17,7 @@ public class SearchJob {
 	
 	public void search(){
 		log.info("start search");
-		searchService.getSearhData();
+//		searchService.getSearhData();
 		log.info("end search");
 	}
 }
